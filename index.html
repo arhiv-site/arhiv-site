@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+<title>АРХИВ — Стиль уже собран</title>
+<meta name="description" content="Готовые образы, стили и находки."/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,sans-serif;background:#faf9f7;color:#111;line-height:1.45;overflow-x:hidden}
+img{max-width:100%;display:block;background:#ebe8e4}
+a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer;border:none;background:none}
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;display:flex;align-items:center;background:rgba(250,249,247,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.05)}
+.hi{width:100%;max-width:1000px;margin:0 auto;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:14px;font-weight:700;letter-spacing:.14em}
+.nav{display:none;gap:22px}.nav a{font-size:11px;font-weight:500;letter-spacing:.08em;color:#666;text-transform:uppercase}.nav a:hover{color:#111}
+.mb{width:40px;height:40px;font-size:18px;display:flex;align-items:center;justify-content:center}
+.mm{display:none;position:fixed;top:52px;left:0;right:0;bottom:0;background:rgba(250,249,247,.97);z-index:99;padding:20px 16px;flex-direction:column}
+.mm.on{display:flex}.mm a{font-size:17px;font-weight:500;padding:14px 0;border-bottom:1px solid #eee}
+.pg{display:none;min-height:100vh;padding-top:52px}.pg.on{display:block}
+.hero{position:relative;height:72vh;min-height:440px;max-height:700px;background:#1a1a1a;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}.hero img.ok{opacity:1}
+.hov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.2) 45%,rgba(0,0,0,.15));display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 16px 44px}
+.hl{font-size:12px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.75);margin-bottom:10px}
+.ht{font-size:26px;font-weight:600;color:#fff;line-height:1.25;margin-bottom:18px}
+.hb{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.bp{background:#fff;color:#111;font-size:11px;font-weight:600;letter-spacing:.06em;padding:13px 22px;border-radius:100px;text-transform:uppercase}
+.bs{background:rgba(255,255,255,.12);backdrop-filter:blur(8px);color:#fff;font-size:11px;font-weight:500;padding:13px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.22);text-transform:uppercase}
+.sec{max-width:1000px;margin:0 auto;padding:36px 16px}
+.st{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:4px}
+.sh{font-size:22px;font-weight:600;margin-bottom:14px}
+.ss{font-size:13px;color:#666;margin-bottom:16px;max-width:420px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fc{background:#fff;border-radius:10px;overflow:hidden;border:1px solid #ebe8e4}
+.fi{width:100%;aspect-ratio:4/5;object-fit:cover;background:#ebe8e4;opacity:0;transition:opacity .35s,transform .4s}.fi.ok{opacity:1}
+.fc:hover .fi{transform:scale(1.03)}
+.fb{padding:8px 10px 10px}
+.fn{font-size:9px;color:#999;letter-spacing:.06em;text-transform:uppercase}
+.fm{font-size:12px;font-weight:600;margin:1px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fs{font-size:9px;color:#999;text-transform:uppercase}
+.fp{font-size:12px;font-weight:600;margin-top:3px}
+.sg{display:grid;gap:10px}
+.sc{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:16/10;background:#111}
+.sc img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s,transform .5s}.sc img.ok{opacity:.82}
+.sc:hover img{transform:scale(1.03)}
+.sov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72),transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.sn{font-size:17px;font-weight:600;color:#fff;margin-bottom:2px}
+.sd{font-size:11px;color:rgba(255,255,255,.65);margin-bottom:8px}
+.sbtn{font-size:10px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase}
+.bd{display:grid;gap:8px}
+.bdi{border:1px solid #ebe8e4;border-radius:10px;overflow:hidden;background:#fff}
+.bdq{width:100%;text-align:left;padding:14px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600}
+.bdq img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0}
+.bdq span{margin-left:auto;color:#999;font-size:16px}
+.bda{display:none;padding:0 14px 14px;font-size:13px;color:#555;line-height:1.55}
+.bdi.open .bda{display:block}.bda ul{margin:8px 0 0 16px}.bda li{margin-bottom:4px}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stepn{font-size:10px;font-weight:600;color:#999;margin-bottom:3px}.stept{font-size:13px;font-weight:600}
+.faqi{border-bottom:1px solid #eee}
+.faqq{width:100%;text-align:left;padding:14px 0;font-size:13px;font-weight:500;display:flex;justify-content:space-between;gap:10px}
+.faqq span{color:#999}.faqa{display:none;font-size:12px;color:#666;padding-bottom:12px;line-height:1.5}
+.faqi.open .faqa{display:block}
+.ph{text-align:center;padding:28px 14px;border:1px dashed #ddd;border-radius:10px}
+.pht{font-size:13px;font-weight:500;margin-bottom:4px}.phs{font-size:12px;color:#888}
+.sin{width:100%;padding:13px 14px;border:1px solid #ddd;border-radius:10px;font-size:14px;font-family:inherit;outline:none;margin-bottom:8px;background:#fff}
+.shin{font-size:12px;color:#888;margin-bottom:14px}
+.sph{position:relative;height:200px;background:#111}.sph img{width:100%;height:100%;object-fit:cover;opacity:.72}
+.sov2{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:18px 16px;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)}
+.tabs{display:flex;border-bottom:1px solid #eee;margin-bottom:14px;position:sticky;top:52px;background:#faf9f7;z-index:10}
+.tab{flex:1;text-align:center;padding:12px;font-size:11px;font-weight:600;color:#999;border-bottom:2px solid transparent;text-transform:uppercase}
+.tab.on{color:#111;border-bottom-color:#111}
+.fdi{width:100%;max-height:480px;object-fit:contain;background:#fff}
+.fdb{max-width:480px;margin:0 auto;padding:18px 16px 48px}
+.back{font-size:12px;color:#666;display:inline-block;padding:8px 0;margin-bottom:4px}
+.fdl{font-size:9px;color:#999;letter-spacing:.08em;text-transform:uppercase}
+.fdn{font-size:20px;font-weight:600;margin:2px 0}.fdm{font-size:11px;color:#888;margin-bottom:6px}
+.fdp{font-size:18px;font-weight:600;margin-bottom:10px}.fdd{font-size:12px;color:#666;margin-bottom:18px}
+.ir{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #eee;gap:10px}
+.in{font-size:12px;font-weight:500}.ip{font-size:11px;color:#888}
+.bb{background:#111;color:#fff;font-size:9px;font-weight:600;padding:9px 14px;border-radius:100px;text-transform:uppercase;white-space:nowrap}
+.note{margin-top:18px;padding:12px;background:#f3f1ee;border-radius:8px;font-size:11px;color:#666;text-align:center}
+.ft{background:#111;color:#fff;padding:36px 16px;margin-top:8px}
+.ftl{font-size:12px;font-weight:700;letter-spacing:.14em;margin-bottom:4px}
+.fts{font-size:11px;color:rgba(255,255,255,.4);margin-bottom:18px}
+.fta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:20px}
+.fta a{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.ftc{font-size:9px;color:rgba(255,255,255,.2)}
+.hid{display:none!important}
+@media(min-width:720px){
+.mb{display:none}.nav{display:flex}
+.hero{height:78vh;max-height:760px}.ht{font-size:34px}
+.sec{padding:44px 24px}.sh{font-size:26px}
+.g{grid-template-columns:repeat(4,1fr);gap:12px}
+.sg{grid-template-columns:1fr 1fr;gap:12px}
+.steps{grid-template-columns:repeat(4,1fr)}.sph{height:280px}
+}
+
+.cw{margin:0 -16px;padding:0 16px;overflow:hidden}
+.car{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 16px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:6px}
+.car::-webkit-scrollbar{display:none}
+.car .fc{flex:0 0 150px;scroll-snap-align:start}
+@media(min-width:720px){.car .fc{flex:0 0 180px}}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="hi">
+<a href="#" class="logo" onclick="go('h');return false">АРХИВ</a>
+<nav class="nav">
+<a href="#" onclick="go('h');sc('pop');return false">OUTFIT'Ы</a>
+<a href="#" onclick="go('h');sc('styles');return false">СТИЛИ</a>
+<a href="#" onclick="go('h');sc('items');return false">ВЕЩИ</a>
+<a href="#" onclick="go('search');return false">НАЙТИ</a>
+</nav>
+<button class="mb" onclick="document.getElementById('mm').classList.toggle('on')">☰</button>
+</div></header>
+<div class="mm" id="mm">
+<a href="#" onclick="go('h');cl();return false">Главная</a>
+<a href="#" onclick="go('h');sc('pop');cl();return false">OUTFIT'Ы</a>
+<a href="#" onclick="go('h');sc('styles');cl();return false">СТИЛИ</a>
+<a href="#" onclick="go('h');sc('items');cl();return false">ВЕЩИ</a>
+<a href="#" onclick="go('search');cl();return false">НАЙТИ</a>
+</div>
+<div class="pg on" id="pg-h">
+<section class="hero">
+<img src="hero.jpg" alt="АРХИВ" onload="this.classList.add('ok')"/>
+<div class="hov">
+<div class="hl">АРХИВ</div>
+<div class="ht">Стиль уже собран.<br>Осталось найти свой.</div>
+<div class="hb">
+<a href="#" class="bp" onclick="sc('pop');return false">Смотреть OUTFIT'ы</a>
+<a href="#" class="bs" onclick="sc('styles');return false">Смотреть стили</a>
+</div>
+</div>
+</section>
+<section class="sec" id="pop">
+<div class="st">Лучшее</div>
+<div class="sh">Популярные OUTFIT'ы</div>
+<div class="cw"><div class="car" id="popG"></div></div>
+</section>
+<section class="sec" id="styles">
+<div class="st">Направления</div>
+<div class="sh">Стили</div>
+<div class="sg" id="stG"></div>
+</section>
+<section class="sec" id="guide">
+<div class="st">Гид</div>
+<div class="sh">Разбор стилей</div>
+<div class="ss">Коротко: что это, какие вещи и как собрать.</div>
+<div class="bd" id="bd"></div>
+</section>
+<section class="sec" id="all">
+<div class="st">Каталог</div>
+<div class="sh">Все OUTFIT'ы</div>
+<div class="ss">16 готовых образов · 4 стиля</div>
+<div class="g" id="allG"></div>
+</section>
+<section class="sec" id="items">
+<div class="st">Каталог</div>
+<div class="sh">Вещи</div>
+<div class="ph"><div class="pht">Раздел обновляется</div><div class="phs">Скоро здесь появятся отдельные вещи из новых подборок АРХИВА.</div></div>
+</section>
+<section class="sec" id="finds">
+<div class="st">Находки</div>
+<div class="sh">FINDS</div>
+<div class="ph"><div class="pht">Curated-подборка</div><div class="phs">Интересные вещи отдельно от готовых образов — скоро.</div></div>
+</section>
+<section class="sec">
+<div class="st">Процесс</div>
+<div class="sh">Как это работает</div>
+<div class="steps">
+<div><div class="stepn">01</div><div class="stept">Выбери стиль</div></div>
+<div><div class="stepn">02</div><div class="stept">Найди OUTFIT</div></div>
+<div><div class="stepn">03</div><div class="stept">Открой вещи</div></div>
+<div><div class="stepn">04</div><div class="stept">Собери свой образ</div></div>
+</div>
+</section>
+<section class="sec">
+<div class="st">FAQ</div>
+<div class="sh">Вопросы</div>
+<div id="faq"></div>
+</section>
+<footer class="ft">
+<div class="ftl">АРХИВ</div>
+<div class="fts">Стиль уже собран. Осталось найти свой.</div>
+<div class="fta">
+<a href="#" onclick="go('h');sc('pop');return false">OUTFIT'Ы</a>
+<a href="#" onclick="go('h');sc('styles');return false">СТИЛИ</a>
+<a href="#" onclick="go('h');sc('items');return false">ВЕЩИ</a>
+<a href="#" onclick="go('search');return false">НАЙТИ</a>
+</div>
+<div class="ftc">© 2026 АРХИВ</div>
+</footer>
+</div>
+<div class="pg" id="pg-style">
+<div class="sph" id="sHero"></div>
+<div class="sec" style="padding-top:0">
+<div class="tabs">
+<button class="tab on" id="tF" onclick="swT('f')">OUTFIT'ы</button>
+<button class="tab" id="tI" onclick="swT('i')">Вещи</button>
+</div>
+<div id="sFits"></div>
+<div id="sItems" class="hid"><div class="ph"><div class="pht">Вещи стиля — скоро</div></div></div>
+</div>
+</div>
+<div class="pg" id="pg-fit"><div id="fD"></div></div>
+<div class="pg" id="pg-search">
+<div class="sec" style="padding-top:28px">
+<a href="#" class="back" onclick="go('h');return false">← Назад</a>
+<div class="st">Поиск</div>
+<div class="sh">Найти</div>
+<input class="sin" id="sIn" placeholder="стритвир, дрилл, худи, до 5000..." oninput="doS(this.value)" onkeyup="doS(this.value)"/>
+<div class="shin">Можно по-русски: «стритвир», «классика», «повседневный», «чёрное худи»</div>
+<div id="sRes"></div>
+</div>
+</div>
+<script>
+const ST={
+streetwear:{id:'streetwear',name:'STREETWEAR',desc:'Baggy, denim, Y2K и городская эстетика',img:'s1.jpg',guide:'Свободные силуэты, baggy-джинсы, графичные футболки и детали, которые цепляют взгляд.',points:['Силуэты: oversized, baggy, relaxed','Вещи: худи, графичные футболки, широкие джинсы, кепки','Цвета: чёрный, серый, индиго, белый','Аксессуары: цепи, часы, кольца, очки']},
+drill:{id:'drill',name:'DRILL',desc:'Тёмные оттенки, puffer, underground',img:'s2.jpg',guide:'Тёмный и дерзкий стиль. Пуховики, поло, свободные джинсы и аксессуары с характером.',points:['Силуэты: объёмные куртки, широкие джинсы','Вещи: puffer, zip-худи, поло','Цвета: чёрный, тёмно-серый, индиго','Аксессуары: тяжёлые часы, кольца, ремни']},
+oldmoney:{id:'oldmoney',name:'OLD MONEY',desc:'Классика, спокойные оттенки, детали',img:'s3.jpg',guide:'Чистые силуэты. Поло, брюки, часы — образ выглядит дорого за счёт пропорций.',points:['Силуэты: чистые, слегка свободные','Вещи: поло, рубашки, брюки','Цвета: бежевый, молочный, коричневый','Аксессуары: часы, очки']},
+casual:{id:'casual',name:'CASUAL',desc:'Простые вещи, чистые сочетания',img:'s4.jpg',guide:'Повседневные образы. Футболки, худи, джинсы — база, из которой легко собрать своё.',points:['Силуэты: relaxed, regular','Вещи: футболки, худи, джинсы','Цвета: белый, серый, чёрный','Аксессуары: цепочки, кепки']}
+};
+const F=[
+{id:'sw-01',num:'OUTFIT 01',name:'STREETWEAR',style:'streetwear',sn:'STREETWEAR',price:4813,ps:'4 813 ₽',img:'f01.jpg',desc:'Графичная футболка, худи, джинсы, кепка, часы.',items:[{n:'Футболка',p:'569 ₽',l:'https://ali.click/loiem1g'},{n:'Кофта',p:'1 080 ₽',l:'https://ali.click/acjem1a'},{n:'Джинсы',p:'2 169 ₽',l:'https://ali.click/cljem1d'},{n:'Кепка',p:'280 ₽',l:'https://ali.click/7rjem1e'},{n:'Часы',p:'715 ₽',l:'https://ali.click/yuiem1x'}]},
+{id:'sw-02',num:'OUTFIT 02',name:'STREETWEAR',style:'streetwear',sn:'STREETWEAR',price:2799,ps:'2 799 ₽',img:'f02.jpg',desc:'Футболка и брюки в полоску + аксессуары.',items:[{n:'Брюки',p:'1 601 ₽',l:'https://ali.click/mbxhm1m'},{n:'Футболка',p:'329 ₽',l:'https://ali.click/ffxhm1u'},{n:'Цепь',p:'156 ₽',l:'https://ali.click/c0sim17'},{n:'Браслет',p:'159 ₽',l:'https://ali.click/h2sim1o'},{n:'Кольцо',p:'105 ₽',l:'https://ali.click/x5sim1w'},{n:'Часы',p:'300 ₽',l:'https://ali.click/g7sim1t'}]},
+{id:'sw-03',num:'OUTFIT 03',name:'STREETWEAR',style:'streetwear',sn:'STREETWEAR',price:5111,ps:'5 111 ₽',img:'f03.jpg',desc:'Zip-худи, футболка, джинсы, очки.',items:[{n:'Футболка',p:'699 ₽',l:'https://ali.click/03uim1j'},{n:'Кофта',p:'1 671 ₽',l:'https://ali.click/1pvim16'},{n:'Джинсы',p:'2 029 ₽',l:'https://ali.click/rzvim1c'},{n:'Цепочка',p:'149 ₽',l:'https://ali.click/fquim1b'},{n:'Очки',p:'449 ₽',l:'https://ali.click/l1vim1l'},{n:'Браслет',p:'114 ₽',l:'https://ali.click/eouim1c'}]},
+{id:'sw-04',num:'OUTFIT 04',name:'RACING',style:'streetwear',sn:'STREETWEAR / RACING',price:5148,ps:'5 148 ₽',img:'f04.jpg',desc:'Худи с машиной, Y2K-футболка, ретро-джинсы.',items:[{n:'Футболка Y2K',p:'619 ₽',l:'https://ali.click/o4xjm1b'},{n:'Очки',p:'279 ₽',l:'https://ali.click/98xjm12'},{n:'Джинсы',p:'2 000 ₽',l:'https://ali.click/k9yjm13'},{n:'Худи',p:'749 ₽',l:'https://ali.click/7hyjm1b'},{n:'Цепочка',p:'162 ₽',l:'https://ali.click/bzyjm1y'},{n:'Часы',p:'1 000 ₽',l:'https://ali.click/l9zjm1h'},{n:'Кепка LA',p:'—',l:'https://ali.click/yywjm1x'}]},
+{id:'dr-01',num:'OUTFIT 01',name:'DRILL',style:'drill',sn:'DRILL',price:4626,ps:'4 626 ₽',img:'f05.jpg',desc:'Поло, худи с флагом, джинсы.',items:[{n:'Джинсы',p:'2 471 ₽',l:'https://ali.click/9kg0n16'},{n:'Поло',p:'599 ₽',l:'https://ali.click/4og0n1e'},{n:'Кофта',p:'1 556 ₽',l:'https://ali.click/arg0n10'}]},
+{id:'dr-02',num:'OUTFIT 02',name:'DRILL',style:'drill',sn:'DRILL',price:6786,ps:'6 786 ₽',img:'f06.jpg',desc:'Поло, пуховик, ремень DVD.',items:[{n:'Куртка',p:'2 800 ₽',l:'https://ali.click/mcsxm1v'},{n:'Джинсы',p:'2 285 ₽',l:'https://ali.click/ilsxm1g'},{n:'Поло',p:'1 442 ₽',l:'https://ali.click/cbtxm1m'},{n:'Ремень',p:'259 ₽',l:'https://ali.click/h7txm1l'}]},
+{id:'dr-03',num:'OUTFIT 03',name:'Y2K',style:'drill',sn:'DRILL / Y2K',price:3517,ps:'3 517 ₽',img:'f07.jpg',desc:'Рубашка с принтом, джинсы с крыльями.',items:[{n:'Футболка',p:'1 417 ₽',l:'https://ali.click/v6i0n1f'},{n:'Джинсы',p:'2 100 ₽',l:'https://ali.click/xxh0n13'}]},
+{id:'dr-04',num:'OUTFIT 04',name:'DRILL',style:'drill',sn:'DRILL',price:2912,ps:'2 912 ₽',img:'f08.jpg',desc:'Поло NEW YORK, худи, джинсы.',items:[{n:'Поло',p:'600 ₽',l:'https://ali.click/ujj0n1p'},{n:'Худи',p:'812 ₽',l:'https://ali.click/jgj0n1a'},{n:'Джинсы',p:'1 500 ₽',l:'https://ali.click/u9j0n1i'}]},
+{id:'om-01',num:'OUTFIT 01',name:'OLD MONEY',style:'oldmoney',sn:'OLD MONEY',price:3077,ps:'3 077 ₽',img:'f09.jpg',desc:'Поло, белые брюки, часы.',items:[{n:'Поло',p:'598 ₽',l:'https://ali.click/hrk0n1n'},{n:'Брюки',p:'1 500 ₽',l:'https://ali.click/nrl0n1x'},{n:'Часы',p:'979 ₽',l:'https://ali.click/dvl0n1h'}]},
+{id:'om-02',num:'OUTFIT 02',name:'OLD MONEY',style:'oldmoney',sn:'OLD MONEY',price:5630,ps:'5 630 ₽',img:'f10.jpg',desc:'Бежевое поло, брюки, золотые часы.',items:[{n:'Поло',p:'1 000 ₽',l:'https://ali.click/nem0n1a'},{n:'Брюки',p:'3 000 ₽',l:'https://ali.click/3gm0n16'},{n:'Цепочка',p:'300 ₽',l:'https://ali.click/2im0n1l'},{n:'Часы',p:'1 330 ₽',l:'https://ali.click/vnm0n17'}]},
+{id:'om-03',num:'OUTFIT 03',name:'ТИХАЯ КЛАССИКА',style:'oldmoney',sn:'OLD MONEY',price:5259,ps:'5 259 ₽',img:'f11.jpg',desc:'Зелёная рубашка, молочные брюки.',items:[{n:'Рубашка',p:'1 000 ₽',l:'https://ali.click/4l81n1s'},{n:'Брюки',p:'3 380 ₽',l:'https://ali.click/2i81n1f'},{n:'Часы',p:'279 ₽',l:'https://ali.click/id81n1v'},{n:'Очки',p:'600 ₽',l:'https://ali.click/8a81n1o'}]},
+{id:'om-04',num:'OUTFIT 04',name:'OLD MONEY',style:'oldmoney',sn:'OLD MONEY',price:5168,ps:'5 168 ₽',img:'f12.jpg',desc:'Шоколадное поло, кремовые брюки.',items:[{n:'Поло',p:'1 000 ₽',l:'https://ali.click/s4d1n1z'},{n:'Брюки',p:'2 000 ₽',l:'https://ali.click/t5e1n18'},{n:'Часы',p:'1 200 ₽',l:'https://ali.click/8ee1n14'},{n:'Очки',p:'168 ₽',l:'https://ali.click/wre1n1l'}]},
+{id:'ca-01',num:'OUTFIT 01',name:'CITY LAYER',style:'casual',sn:'CASUAL',price:3110,ps:'3 110 ₽',img:'f13.jpg',desc:'Серый верх, белая база, чёрный деним.',items:[{n:'Кофта',p:'1 200 ₽',l:'https://ali.click/ljg1n1b'},{n:'Футболка',p:'410 ₽',l:'https://ali.click/umg1n1m'},{n:'Джинсы',p:'1 500 ₽',l:'https://ali.click/zgg1n1q'}]},
+{id:'ca-02',num:'OUTFIT 02',name:'RACING CASUAL',style:'casual',sn:'CASUAL',price:2884,ps:'2 884 ₽',img:'f14.jpg',desc:'Футболка с машиной, светлые джинсы.',items:[{n:'Футболка',p:'1 000 ₽',l:'https://ali.click/7852n1z'},{n:'Джинсы',p:'2 000 ₽',l:'https://ali.click/1942n1s'},{n:'Цепочка',p:'84 ₽',l:'https://ali.click/chh1n1p'}]},
+{id:'ca-03',num:'OUTFIT 03',name:'БАЗА',style:'casual',sn:'CASUAL',price:3458,ps:'3 458 ₽',img:'f15.jpg',desc:'Белая футболка, серое худи, деним.',items:[{n:'Футболка',p:'939 ₽',l:'https://ali.click/6072n1v'},{n:'Худи',p:'819 ₽',l:'https://ali.click/0f72n1j'},{n:'Джинсы',p:'1 700 ₽',l:'https://ali.click/p862n10'}]},
+{id:'ca-04',num:'OUTFIT 04',name:'URBAN BLACK',style:'casual',sn:'CASUAL',price:3378,ps:'3 378 ₽',img:'f16.jpg',desc:'Чёрное балаклава-худи, джинсы.',items:[{n:'Балаклава-худи',p:'1 088 ₽',l:'https://ali.click/5o82n1m'},{n:'Джинсы',p:'2 290 ₽',l:'https://ali.click/4v82n19'}]}
+];
+const FAQ=[
+{q:'Что такое АРХИВ?',a:'Платформа с готовыми образами. Мы собираем стиль — тебе остаётся выбрать свой.'},
+{q:'Как выбрать стиль?',a:'Открой Стили или Разбор стилей. Там коротко про силуэты, цвета и вещи.'},
+{q:'Можно купить только одну вещь?',a:'Да. У каждой вещи своя ссылка. Покупать можно по частям.'},
+{q:'Откуда берутся вещи?',a:'Ссылки ведут к продавцам. Мы не продаём одежду сами.'},
+{q:'Почему цены могут меняться?',a:'Цены у продавцов обновляются. Итоговая цена может отличаться.'},
+{q:'Как часто новые OUTFIT\'ы?',a:'Добавляем новые образы регулярно.'}
+];
+const SYN={streetwear:['стритвир','стритвэар','streetwear','стрит','y2k','бэгги','baggy'],drill:['дрилл','дрил','drill','андерграунд','тёмный','puffer','пуховик'],oldmoney:['old money','олд мани','классика','классический','quiet luxury','элегантный','поло'],casual:['casual','кежуал','повседневный','повседневка','база','каждый день']};
+function go(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));document.getElementById('pg-'+id).classList.add('on');window.scrollTo(0,0);cl()}
+function sc(id){go('h');setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'})},30)}
+function cl(){document.getElementById('mm').classList.remove('on')}
+function card(f){return`<a href="#" class="fc" onclick="oF('${f.id}');return false"><img class="fi" src="${f.img}" alt="" loading="lazy" onload="this.classList.add('ok')"/><div class="fb"><div class="fn">${f.num}</div><div class="fm">${f.name}</div><div class="fs">${f.sn}</div><div class="fp">${f.ps}</div></div></a>`}
+function init(){
+document.getElementById('popG').innerHTML=F.slice(0,8).map(card).join('');
+document.getElementById('allG').innerHTML=F.map(card).join('');
+document.getElementById('stG').innerHTML=Object.values(ST).map(s=>`<a href="#" class="sc" onclick="oS('${s.id}');return false"><img src="${s.img}" alt="" loading="lazy" onload="this.classList.add('ok')"/><div class="sov"><div class="sn">${s.name}</div><div class="sd">${s.desc}</div><div class="sbtn">Смотреть стиль →</div></div></a>`).join('');
+document.getElementById('bd').innerHTML=Object.values(ST).map(s=>`<div class="bdi"><button class="bdq" onclick="togBd(this)"><img src="${s.img}" alt=""/><div>${s.name}</div><span>+</span></button><div class="bda"><p>${s.guide}</p><ul>${s.points.map(p=>'<li>'+p+'</li>').join('')}</ul></div></div>`).join('');
+document.getElementById('faq').innerHTML=FAQ.map(f=>`<div class="faqi"><button class="faqq" onclick="this.parentElement.classList.toggle('open')">${f.q}<span>+</span></button><div class="faqa">${f.a}</div></div>`).join('');
+}
+function togBd(btn){const i=btn.parentElement;const o=i.classList.contains('open');document.querySelectorAll('.bdi').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open')}
+function oS(id){const s=ST[id];if(!s)return;
+document.getElementById('sHero').innerHTML=`<img src="${s.img}" alt=""/><div class="sov2"><div class="sn">${s.name}</div><div class="sd">${s.desc}</div></div>`;
+document.getElementById('sFits').innerHTML=`<div class="g">${F.filter(f=>f.style===id).map(card).join('')}</div>`;
+document.getElementById('tF').classList.add('on');document.getElementById('tI').classList.remove('on');
+document.getElementById('sFits').classList.remove('hid');document.getElementById('sItems').classList.add('hid');go('style')}
+function swT(t){if(t==='f'){document.getElementById('tF').classList.add('on');document.getElementById('tI').classList.remove('on');document.getElementById('sFits').classList.remove('hid');document.getElementById('sItems').classList.add('hid')}else{document.getElementById('tI').classList.add('on');document.getElementById('tF').classList.remove('on');document.getElementById('sItems').classList.remove('hid');document.getElementById('sFits').classList.add('hid')}}
+function oF(id){const f=F.find(x=>x.id===id);if(!f)return;
+document.getElementById('fD').innerHTML=`<img src="${f.img}" class="fdi" alt=""/><div class="fdb"><a href="#" class="back" onclick="oS('${f.style}');return false">← ${f.sn}</a><div class="fdl">${f.num}</div><div class="fdn">${f.name}</div><div class="fdm">${f.sn}</div><div class="fdp">${f.ps}</div><div class="fdd">${f.desc}</div><div class="st" style="margin-bottom:8px">В образ входит</div>${f.items.map(i=>`<div class="ir"><div><div class="in">${i.n}</div><div class="ip">${i.p}</div></div><a href="${i.l}" target="_blank" rel="noopener" class="bb">Смотреть</a></div>`).join('')}<div class="note">Готовый образ — это результат.<br>Покупать можно по частям.</div></div>`;go('fit')}
+function doS(q){
+q=(q||"").trim().toLowerCase();
+var r=document.getElementById("sRes");
+if(!r)return;
+if(!q){r.innerHTML="";return;}
+var styles=[];
+var syn=typeof SYN!=="undefined"?SYN:{};
+for(var id in syn){if(!syn.hasOwnProperty(id))continue;var words=syn[id];for(var i=0;i<words.length;i++){if(q.indexOf(words[i])!==-1){styles.push(id);break;}}if(q.indexOf(id)!==-1)styles.push(id);}
+var maxP=null;var m1=q.match(/до\s*(\d+)/);var m2=q.match(/(\d+)\s*руб/);if(m1)maxP=parseInt(m1[1],10);else if(m2)maxP=parseInt(m2[1],10);
+var matched=[];
+for(var i=0;i<F.length;i++){
+var f=F[i];
+if(styles.length){var okStyle=false;for(var j=0;j<styles.length;j++){if(f.style===styles[j])okStyle=true;}if(!okStyle)continue;}
+if(maxP!==null&&f.price>maxP)continue;
+if(!styles.length&&maxP===null){
+var t=(f.name+" "+f.sn+" "+f.desc+" "+f.items.map(function(it){return it.n;}).join(" ")).toLowerCase();
+if(t.indexOf(q)===-1)continue;
+}
+matched.push(f);
+}
+if(!matched.length){r.innerHTML='<p style="color:#999;font-size:13px;padding:12px 0">Ничего не найдено. Попробуй: стритвир, дрилл, классика, худи</p>';return;}
+r.innerHTML='<div class="g">'+matched.map(card).join("")+'</div>';
+}
+
+init();
+</script>
+</body>
+</html>
